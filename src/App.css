@@ -1,3 +1,132 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* *=========== Default theme =========== */
+/* @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+} */
+
+/* *=========== Silver theme =========== */
+@layer base {
+  :root {
+    /* Fondo y texto */
+    --background: 0 0% 10%; /* negro oscuro */
+    --foreground: 0 0% 85%; /* plateado claro */
+
+    /* Fondo y texto de las tarjetas y popovers */
+    --card: 0 0% 15%; /* negro ligeramente más claro */
+    --card-foreground: 0 0% 85%; /* plateado */
+    --popover: 0 0% 15%; /* igual que card */
+    --popover-foreground: 0 0% 85%; /* igual que card-foreground */
+
+    /* Colores primarios y secundarios */
+    --primary: 0 0% 50%; /* plateado medio */
+    --primary-foreground: 0 0% 85%; /* plateado claro */
+    --secondary: 0 0% 20%; /* gris oscuro */
+    --secondary-foreground: 0 0% 85%; /* plateado */
+
+    /* Colores de apoyo */
+    --muted: 0 0% 20%; /* gris oscuro */
+    --muted-foreground: 0 0% 60%; /* gris medio */
+    --accent: 0 0% 30%; /* gris más claro */
+    --accent-foreground: 0 0% 85%; /* plateado claro */
+    --destructive: 0 84.2% 60.2%; /* rojo para alertas */
+    --destructive-foreground: 0 0% 98%; /* blanco para contraste */
+
+    /* Bordes y elementos de input */
+    --border: 0 0% 30%; /* gris neutro */
+    --input: 0 0% 30%; /* gris neutro */
+    --ring: 0 0% 50%; /* plateado medio */
+  }
+
+  .dark {
+    --background: 0 0% 5%; /* negro absoluto */
+    --foreground: 0 0% 85%; /* plateado claro */
+    --card: 0 0% 10%; /* gris muy oscuro */
+    --card-foreground: 0 0% 85%; /* plateado */
+    --popover: 0 0% 10%; /* igual que card */
+    --popover-foreground: 0 0% 85%; /* igual que card-foreground */
+    --primary: 0 0% 60%; /* plateado claro */
+    --primary-foreground: 0 0% 15%; /* gris oscuro para contraste */
+    --secondary: 0 0% 15%; /* gris oscuro */
+    --secondary-foreground: 0 0% 85%; /* plateado */
+    --muted: 0 0% 15%; /* gris oscuro */
+    --muted-foreground: 0 0% 60%; /* gris medio */
+    --accent: 0 0% 20%; /* gris más claro */
+    --accent-foreground: 0 0% 85%; /* plateado claro */
+    --border: 0 0% 20%; /* gris oscuro */
+    --input: 0 0% 20%; /* gris oscuro */
+    --ring: 0 0% 60%; /* plateado claro */
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
