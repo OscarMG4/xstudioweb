@@ -11,13 +11,13 @@ import image3 from "../assets/reflecting.png";
 import image4 from "../assets/looking-ahead.png";
 import { Badge } from "./ui/badge/badge";
 
-interface FeatureProps {
+interface FeaturesProps {
   title: string;
   description: string;
   image: string;
 }
 
-const features: FeatureProps[] = [
+const features: FeaturesProps[] = [
   {
     title: "Responsive Design",
     description:
@@ -41,7 +41,7 @@ const features: FeatureProps[] = [
 const featureList: string[] = [
   "Dark/Light theme",
   "Reviews",
-  "Features",
+  "Sobre Nosotros",
   "Pricing",
   "Contact form",
   "Our team",
@@ -50,10 +50,10 @@ const featureList: string[] = [
   "Minimalist",
 ];
 
-export const Features = () => {
+export const  Features = () => {
   return (
     <section
-      id="features"
+      id="sobreNosotros"
       className="container py-24 sm:py-32 space-y-8"
     >
       <h2 className="text-3xl lg:text-4xl font-bold md:text-center">
@@ -77,7 +77,7 @@ export const Features = () => {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map(({ title, description, image }: FeatureProps) => (
+        {features.map(({ title, description, image }: FeaturesProps) => (
           <Card key={title}>
             <CardHeader>
               <CardTitle>{title}</CardTitle>

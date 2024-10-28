@@ -1,13 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { MedalIcon, MapIcon, PlaneIcon, GiftIcon } from "../components/Icons";
 
-interface FeatureProps {
+interface SobreNosotrosProps {
   icon: JSX.Element;
   title: string;
   description: string;
 }
 
-const features: FeatureProps[] = [
+const sobreNosotros: SobreNosotrosProps[] = [
   {
     icon: <MedalIcon />,
     title: "Accessibility",
@@ -53,7 +53,7 @@ export const HowItWorks = () => {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {features.map(({ icon, title, description }: FeatureProps) => (
+        {sobreNosotros.map(({ icon, title, description }: SobreNosotrosProps) => (
           <Card
             key={title}
             className="bg-muted/50"

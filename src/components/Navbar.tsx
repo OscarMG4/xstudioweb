@@ -13,6 +13,8 @@ import { Menu } from "lucide-react";
 import { buttonVariants } from "./ui/button/buttonVariants"
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "./ui/navigation-menu/navigation-menu"
 import { LogoIcon } from "./Icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCameraRetro } from '@fortawesome/free-solid-svg-icons';
 
 interface RouteProps {
   href: string;
@@ -21,27 +23,27 @@ interface RouteProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "#features",
-    label: "Features",
+    href: "#sobreNosotros",
+    label: "Sobre Nosotros",
   },
   {
-    href: "#testimonials",
-    label: "Testimonials",
+    href: "#nuestrosServicios",
+    label: "Nuestros Servicios",
   },
   {
-    href: "#pricing",
-    label: "Pricing",
+    href: "#precios",
+    label: "Planes y Precios",
   },
   {
-    href: "#faq",
-    label: "FAQ",
+    href: "#contacto",
+    label: "Contacto",
   },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
-    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
+    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-white dark:bg-background">
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
@@ -51,7 +53,6 @@ export const Navbar = () => {
               className="ml-2 font-bold text-xl flex"
             >
               <LogoIcon />
-              ShadcnUI/React
             </a>
           </NavigationMenuItem>
 
@@ -72,9 +73,9 @@ export const Navbar = () => {
               </SheetTrigger>
 
               <SheetContent side={"left"}>
-                <SheetHeader>
+                <SheetHeader className="flex justify-center items-center">
                   <SheetTitle className="font-bold text-xl">
-                    Shadcn/React
+                    <LogoIcon />
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
@@ -97,6 +98,7 @@ export const Navbar = () => {
                       variant: "secondary",
                     })}`}
                   >
+                    <FontAwesomeIcon icon={faCameraRetro} className="h-5 w-5 inline-block mr-2" /> {/* Ícono */}
                     Portafolio
                   </a>
                 </nav>
@@ -120,17 +122,6 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex gap-2">
-            <a
-              rel="noreferrer noopener"
-              href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-              target="_blank"
-              className={`border ${buttonVariants({ variant: "secondary" })}`}
-            >
-              Portafolio
-            </a>
-
-          </div>
         </NavigationMenuList>
       </NavigationMenu>
     </header>

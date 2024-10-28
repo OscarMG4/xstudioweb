@@ -2,71 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* *=========== Default theme =========== */
-/* @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
-} */
-
 /* *=========== Silver theme =========== */
 @layer base {
   :root {
@@ -101,7 +36,7 @@
   }
 
   .dark {
-    --background: 0 0% 5%; /* negro absoluto */
+    --background: 0 0% 0%; /* negro absoluto */
     --foreground: 0 0% 85%; /* plateado claro */
     --card: 0 0% 10%; /* gris muy oscuro */
     --card-foreground: 0 0% 85%; /* plateado */
@@ -121,8 +56,27 @@
   }
 }
 
-
 @layer base {
+  
+  header {
+    @apply bg-transparent; /* Hace el fondo del header transparente */
+    padding: 14px 24px; /* Espaciado opcional */
+    opacity: 70%; /* Ajusta según necesites; 1 es completamente opaco, 0 es completamente transparente */
+  }
+  
+  body {
+    /* Establecer la imagen de fondo */
+    @apply bg-cover bg-center; /* Para que la imagen cubra el fondo y esté centrada */
+    @apply bg-background text-foreground;
+    overflow-x: hidden; /* Ocultar el desplazamiento horizontal */
+    background-size: cover; /* Asegúrate de que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Evitar que se repita la imagen */
+    height: 100vh; /* Asegura que el body tome toda la altura de la pantalla */
+  }
+
+  .dark body {
+    background-image: url('/src/assets/background.jpg'); /* otra imagen para el modo oscuro */
+  }
   * {
     @apply border-border;
   }
@@ -130,3 +84,31 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: 'CityBurn';
+  src: url('/fonts/cityburn.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'CityBurn', sans-serif;
+  font-weight: 300; /* Peso ligero */
+}
+
+a {
+  font-family: 'CityBurn', sans-serif;
+  font-size: 1.2em !important 
+}
+
+
+.font-cityBurn {
+  font-family: 'CityBurn', sans-serif;
+}
+
+.portfolio-link {
+  color: #C0C0C0;
+  font-weight: bold; 
+}
+
